@@ -1,0 +1,183 @@
+/* STYLE SECTIONING TAGS */
+* { /* Reset the space of the webpage */
+   margin: 0px;
+   padding: 0px;
+}
+
+body {
+ background-color: darkseagreen; 
+}
+
+/* STYLE TEXT */
+
+h1 {
+  font-size: 6em;
+}
+
+#title {
+  color: darkgreen;
+  text-align: center;
+  font-size: 8em;
+  font-family: Times New Roman;
+  text-shadow: 3px -2px 1px seagreen;
+  margin: 0.5em;
+}
+
+#Fact1 {
+  color: #fffce9; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 3em;
+  text-align: center;
+  margin-top: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+#abouttext {
+  color: #fffce9;
+  text-shadow: 3px -2px 3px #9c8f40;
+  font-size: 1.5em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  margin: 2em;
+  margin-left: 7em;
+  margin-right: 7em;
+  line-height: 2;
+}
+
+#reduceway {
+  text-align: center;
+  font-size: 2.5em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: #fffce9;
+  text-shadow: 3px -2px 3px #9c8f40
+}
+
+/* STYLE IMAGES */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.flex-item {
+  flex-basis: 100%;
+  width: 100%;
+}
+
+.flex-container2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+
+/* STYLE NAV BAR */
+
+ul {
+  list-style-type: none;
+  background-color: olivedrab;
+  overflow: hidden;
+  padding: 1em;
+}
+
+li {
+   display: inline;
+   float: right;
+}
+
+li a {
+  text-decoration: none;
+  font-size: 1.3em;
+  padding: 1.2em;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: #024502;
+}
+
+li a:hover {
+  background-color: mediumaquamarine;
+}
+
+/* STYLE BUTTONS */
+
+
+
+/* ADD MORE! */
+
+@media screen and (max-width: 850px) {
+  .flex-container{
+    flex-wrap: wrap;
+  }
+
+  .flex-container2 {
+    flex-wrap: wrap;
+  }
+
+  #title {
+    font-size: 5em;
+  }
+
+  #Fact1 {
+    font-size: 2.5em;
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+  }
+
+  #equal {
+    font-size: 4em;
+  }
+
+  .nav {
+    li a {
+      padding: 0.5em;
+    }
+  }
+
+  #abouttext {
+    font-size: 1.2em;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .reducewaycontainer {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+   #reduceway {
+     font-size: 1.5em;
+     margin-left: 1em;
+     margin-right: 1em;
+   }
+
+     li {
+    display: block;
+    float: center;
+    margin-left: 0.5px;
+  }
+
+  li a {
+    padding: 0.3em;
+    font-size: 1.3em;
+    margin-right: 0.5em;
+    margin-left: 0.2em;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .reducewaycontainer {
+    margin-left: 10em;
+    margin-right: 10em;
+  }
+
+   #reduceway {
+     font-size: 1.5em;
+     margin-left: 1em;
+     margin-right: 1em;
+   }
+}
