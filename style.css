@@ -18,8 +18,8 @@ h1 {
   color: darkgreen;
   text-align: center;
   font-size: 8em;
-  font-family: Times New Roman;
-  text-shadow: 3px -2px 1px seagreen;
+  font-family: Monospace, Courier New, Courier, sans-serif;
+  text-shadow: 6px -1.5px 1.5px seagreen;
   margin: 0.5em;
 }
 
@@ -80,9 +80,9 @@ h1 {
 
 ul {
   list-style-type: none;
-  background-color: olivedrab;
+  background-color: rgb(154, 231, 154);
   overflow: hidden;
-  padding: 1em;
+  padding: 1.2em;
 }
 
 li {
@@ -100,7 +100,13 @@ li a {
 }
 
 li a:hover {
-  background-color: mediumaquamarine;
+  background-color: mediumspringgreen;
+}
+
+li a.active {
+  padding-bottom: 0.5em;
+  color: #024502;
+  border-bottom: 3px solid darkgreen;
 }
 
 /* STYLE BUTTONS */
