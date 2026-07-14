@@ -118,6 +118,10 @@ li a.active {
   margin: 2em;
 }
 
+.leaflet-container {
+  height: 60em;
+}
+
 /* ADD MORE! */
 
 @media screen and (max-width: 850px) {
@@ -155,18 +159,7 @@ li a.active {
     margin-right: 1em;
   }
 
-  .reducewaycontainer {
-    margin-left: 1em;
-    margin-right: 1em;
-  }
-
-   #reduceway {
-     font-size: 1.5em;
-     margin-left: 1em;
-     margin-right: 1em;
-   }
-
-     li {
+  li {
     display: block;
     float: center;
     margin-left: 0.5px;
