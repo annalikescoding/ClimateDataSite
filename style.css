@@ -80,7 +80,7 @@ h1 {
 
 ul {
   list-style-type: none;
-  background-color: rgb(154, 231, 154);
+  background-color: palegreen;
   overflow: hidden;
   padding: 1.2em;
 }
@@ -111,7 +111,12 @@ li a.active {
 
 /* STYLE BUTTONS */
 
-
+/* MAP */
+#map {
+  height: 60em;
+  width: 70em;
+  margin: 2em;
+}
 
 /* ADD MORE! */
 
