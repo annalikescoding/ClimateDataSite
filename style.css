@@ -23,6 +23,15 @@ h1 {
   margin: 0.5em;
 }
 
+#mapTitle{
+  color: darkgreen;
+  text-align: center;
+  font-size: 8em;
+  font-family: Monospace, Courier New, Courier, sans-serif;
+  text-shadow: 6px -1.5px 1.5px seagreen;
+  margin: 0.5em;
+}
+
 #Fact1 {
   color: #fffce9; 
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -173,6 +182,10 @@ li a.active {
 
   #title {
     font-size: 4em;
+  }
+
+  #mapTitle {
+    font-size: 3em;
   }
 
   #info-panel {
