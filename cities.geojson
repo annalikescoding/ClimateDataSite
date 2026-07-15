@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-74.0060, 40.7128] },
+      "properties": {
+        "cityName": "New York City",
+        "country": "USA",
+        "footprint": "13.2 tCO2e",
+        "primaryDriver": "Services & Imported Goods",
+        "fact": "Procurement of clothing and electronics drives over 30% of household consumption emissions."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [139.6503, 35.6762] },
+      "properties": {
+        "cityName": "Tokyo",
+        "country": "Japan",
+        "footprint": "10.8 tCO2e",
+        "primaryDriver": "High-Carbon Food & Electronics",
+        "fact": "Tokyo relies heavily on imported food, dramatically inflating its 'hidden' supply chain emissions."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-122.4194, 37.7749] },
+      "properties": {
+        "cityName": "San Francisco",
+        "country": "USA",
+        "footprint": "",
+        "primaryDriver": "",
+        "fact": ""
+      }
+    }
+  ]
+}
