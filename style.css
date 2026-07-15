@@ -172,7 +172,25 @@ li a.active {
   }
 
   #title {
-    font-size: 5em;
+    font-size: 4em;
+  }
+
+  #info-panel {
+    height: 15em;
+    width: 20em;
+    margin-bottom: 2em;
+  }
+
+  #map {
+    height: 40em;
+    width: 60em;
+    margin-bottom: 2em;
+    margin-right: 1em;
+    margin-left: 1em;
+  }
+
+  .placeholder-text {
+    font-size: 1.5em;
   }
 
   #Fact1 {
