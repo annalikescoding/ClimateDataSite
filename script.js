@@ -11,12 +11,44 @@ googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',
 });
 googleStreets.addTo(map);
 
+// 2. Load city data from a GeoJSON FeatureCollection
+fetch('cities.json')
+  .then(function(res) {
+      if (!res.ok) {
+        throw new Error('HTTP ' + res.status);
+      }
+      return res.json();
+    })
+  .then(function(geojson) {
+    L.geoJSON(geojson, {
+      // GeoJSON coordinates are [lng, lat] — Leaflet handles the conversion
+      // automatically here, so we don't need to flip them ourselves.
+      pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, {
+          radius: 8,
+          fillColor: "#ff4757",
+          color: "#fff",
+          weight: 2,
+          opacity: 1,
+          fillOpacity: 0.9
+        });
+      },
+      onEachFeature: function(feature, layer) {
+        layer.on('click', function() {
+          return openPanel(feature.properties);
+        });
+      }
+    }).addTo(map);
+  });
 
-function updateExternalPanel(properties) {
-  const panel = document.getElementById('info-panel');
-  panel.innerHTML = `
+
+// 3. Functions that control the external HTML/CSS panel
+function openPanel(properties) {
+  var panel = document.getElementById('info-panel');
+
+  panel.innerHTML =`
     <h2>${properties.cityName} <span style="font-size: 0.6em; color: #aaa;">(${properties.country})</span></h2>
-    <hr style="border-color: #333; margin: 10px 0;">
+    <hr style="border-color: #333; margin: 15px 0;">
     <div>
       <strong>Annual Footprint:</strong>
       <div class="stat-badge">${properties.footprint} per capita</div>
@@ -27,44 +59,11 @@ function updateExternalPanel(properties) {
       ${properties.fact}
     </div>
   `;
+
+  //panel.classList.add('open');
 }
 
-// 3. New Step: Fetch the GeoJSON dynamically from your separate file
-async function loadMapData() {
-  try {
-    // Fetch the file. Make sure cities.geojson is in the same folder as index.html
-    const response = await fetch('./cities.geojson');
-    const cityData = await response.json();
-
-    // Now that we have the data, pass it to Leaflet
-    L.geoJSON(cityData, {
-      pointToLayer: function(feature, latlng) {
-        return L.circleMarker(latlng, {
-          radius: 10,
-          fillColor: "#ff4757",
-          color: "#fff",
-          weight: 2,
-          opacity: 1,
-          fillOpacity: 0.9
-        });
-      },
-      onEachFeature: function (feature, layer) {
-        layer.on('click', function () {
-          updateExternalPanel(feature.properties);
-          map.setView(layer.getLatLng(), 5);
-        });
-        
-        layer.bindTooltip(feature.properties.cityName, {
-          direction: 'top',
-          offset: [0, -5]
-        });
-      }
-    }).addTo(map);
-
-  } catch (error) {
-    console.error("Oops! Something went wrong loading the city data:", error);
-  }
+function closePanel() {
+  document.getElementById('info-panel').classList.remove('open');
 }
 
-// Call the function to fire off the load request when page loads
-loadMapData();
